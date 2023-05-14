@@ -5,6 +5,7 @@ namespace App\Console\Commands;
 use Illuminate\Console\Command;
 use App\Models\Customer;
 use Carbon\Carbon;
+use App\Jobs\SendSubscriptionExpireMessageJob;
 
 class SubscriptionExpiryNotification extends Command
 {
@@ -30,15 +31,16 @@ class SubscriptionExpiryNotification extends Command
     public function handle()
     {
         $expired_customers = Customer::where('subscription_end_date','<',now())
-                                ->where('subscription_end_date')
                                 ->get();
         foreach($expired_customers as $expired_customer)
         {
-            $expire_date = Carbon::createFormFormat('Y-m-d H:i:s',$expired_customer->subscription_end_date)
+            info('I am here inside 46 in command class');
+            $expire_date = Carbon::createFromFormat('Y-m-d',$expired_customer->subscription_end_date)
                                 ->toDateString();
+            dispatch(new SendSubscriptionExpireMessageJob($expired_customer, $expire_date));
             //don't send email to each user or notification
         }
-        //dispatch();
+        
         //return Command::SUCCESS;
     }
 }
