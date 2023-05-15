@@ -38,6 +38,5 @@ class SendSubscriptionExpireMessageJob implements ShouldQueue
         info('I am now inside job class');
         //send Notifciation email , SMS, Notification with FireBase etc ..
         //Todo Sen Email for each Expired user
-        Customer::get();
     }
 }

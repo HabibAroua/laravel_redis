@@ -28,6 +28,12 @@ class SubscriptionExpiryNotification extends Command
      *
      * @return int
      */
+
+    public function __construct()
+    {
+        parent::__construct();
+    }
+
     public function handle()
     {
         $expired_customers = Customer::where('subscription_end_date','<',now())
@@ -37,7 +43,8 @@ class SubscriptionExpiryNotification extends Command
             info('I am here inside 46 in command class');
             $expire_date = Carbon::createFromFormat('Y-m-d',$expired_customer->subscription_end_date)
                                 ->toDateString();
-            dispatch(new SendSubscriptionExpireMessageJob($expired_customer, $expire_date));
+            dispatch(new SendSubscriptionExpireMessageJob($expired_customer, $expire_date))
+                ->onQueue('Habib');
             //don't send email to each user or notification
         }
         
