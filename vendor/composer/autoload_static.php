@@ -33,6 +33,7 @@ class ComposerStaticInit7705ae462ef89568a6305dc612cc82dc
         '58571171fd5812e6e447dce228f52f4d' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/helpers.php',
         'ec07570ca5a812141189b1fa81503674' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Assert/Functions.php',
         '320163ac6b93aebe3dc25b60a0533d56' => __DIR__ . '/..' . '/spatie/laravel-ignition/src/helpers.php',
+        '35f3da1fa9fad2647c83ebd5c6e7f029' => __DIR__ . '/../..' . '/app/Http/Helpers/Utilities.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -519,6 +520,7 @@ class ComposerStaticInit7705ae462ef89568a6305dc612cc82dc
     );
 
     public static $classMap = array (
+        'App\\Console\\Commands\\SubscriptionExpiryNotification' => __DIR__ . '/../..' . '/app/Console/Commands/SubscriptionExpiryNotification.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
@@ -532,6 +534,8 @@ class ComposerStaticInit7705ae462ef89568a6305dc612cc82dc
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\ValidateSignature' => __DIR__ . '/../..' . '/app/Http/Middleware/ValidateSignature.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
+        'App\\Jobs\\SendSubscriptionExpireMessageJob' => __DIR__ . '/../..' . '/app/Jobs/SendSubscriptionExpireMessageJob.php',
+        'App\\Models\\Customer' => __DIR__ . '/../..' . '/app/Models/Customer.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',

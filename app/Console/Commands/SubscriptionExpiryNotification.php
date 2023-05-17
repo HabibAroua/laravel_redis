@@ -36,6 +36,8 @@ class SubscriptionExpiryNotification extends Command
 
     public function handle()
     {
+        // we can use this code in controller and connect with the route
+        
         $expired_customers = Customer::where('subscription_end_date','<',now())
                                 ->get();
         foreach($expired_customers as $expired_customer)

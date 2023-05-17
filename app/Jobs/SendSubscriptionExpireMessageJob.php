@@ -38,5 +38,6 @@ class SendSubscriptionExpireMessageJob implements ShouldQueue
         info('I am now inside job class');
         //send Notifciation email , SMS, Notification with FireBase etc ..
         //Todo Sen Email for each Expired user
+        //sendMail('emails.subscription_experation', $this->customer->email, 'Your Subscription has been expired');
     }
 }
