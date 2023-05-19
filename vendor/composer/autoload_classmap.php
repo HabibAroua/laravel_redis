@@ -6,6 +6,7 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
+    'App\\Console\\Commands\\FillRedis' => $baseDir . '/app/Console/Commands/FillRedis.php',
     'App\\Console\\Commands\\SubscriptionExpiryNotification' => $baseDir . '/app/Console/Commands/SubscriptionExpiryNotification.php',
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',

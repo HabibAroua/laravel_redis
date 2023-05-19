@@ -520,6 +520,7 @@ class ComposerStaticInit7705ae462ef89568a6305dc612cc82dc
     );
 
     public static $classMap = array (
+        'App\\Console\\Commands\\FillRedis' => __DIR__ . '/../..' . '/app/Console/Commands/FillRedis.php',
         'App\\Console\\Commands\\SubscriptionExpiryNotification' => __DIR__ . '/../..' . '/app/Console/Commands/SubscriptionExpiryNotification.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',

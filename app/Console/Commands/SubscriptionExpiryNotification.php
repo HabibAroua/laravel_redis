@@ -46,7 +46,7 @@ class SubscriptionExpiryNotification extends Command
             $expire_date = Carbon::createFromFormat('Y-m-d',$expired_customer->subscription_end_date)
                                 ->toDateString();
             dispatch(new SendSubscriptionExpireMessageJob($expired_customer, $expire_date))
-                ->onQueue('Habib');
+                ->onQueue('Takoua');
             //don't send email to each user or notification
         }
         
