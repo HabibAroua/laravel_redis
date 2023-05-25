@@ -50,8 +50,8 @@ class CustomerController extends Controller
 
     public function checkCustomer(Request $request) //using cache
     {
-        //$customer_id = Cache::get('national_id_'.$request->national_id);
-        $customer_id = Customer::where('national_id', $request->national_id)->first()->id;
+        $customer_id = Cache::get('national_id_'.$request->national_id);
+        //$customer_id = Customer::where('national_id', $request->national_id)->first()->id;
         return $customer_id;
         if($customer_id)
         {
